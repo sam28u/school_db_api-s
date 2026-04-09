@@ -27,14 +27,14 @@ I have included a pre-configured Postman collection so you don't have to manuall
 Adds a new school to the database.
 
 **Request Body (JSON):**
-\`\`\`json
+```json
 {
   "name": "Gothapatna Central High",
   "address": "Gothapatna Main Road, Bhubaneswar",
   "latitude": 20.2944,
   "longitude": 85.7433
 }
-\`\`\`
+```
 **Success Response (201):** Returns a confirmation message and the inserted ID.
 
 ### 2. List Schools by Proximity
@@ -45,7 +45,7 @@ Fetches all schools from the database, does the math on the backend, and returns
 `GET /listSchools?latitude=20.2944&longitude=85.7433`
 
 **Success Response (200):**
-\`\`\`json
+```json
 [
   {
     "id": 1,
@@ -64,7 +64,7 @@ Fetches all schools from the database, does the math on the backend, and returns
     "distance": 5.92 
   }
 ]
-\`\`\`
+```
 
 ---
 
