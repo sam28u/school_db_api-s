@@ -1,0 +1,70 @@
+{
+  "info": {
+    "_postman_id": "5a03a4b2-e2b2-4c85-bb80-cfab8645c5d7",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36993598",
+    "_collection_link": "https://go.postman.co/collection/36993598-5a03a4b2-e2b2-4c85-bb80-cfab8645c5d7?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "https://school-db-api-s.onrender.com/addSchool",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Gothapatna Central High\",\r\n  \"address\": \"Gothapatna Main Road, Bhubaneswar\",\r\n  \"latitude\": 20.2944,\r\n  \"longitude\": 85.7433\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://school-db-api-s.onrender.com/addSchool",
+          "protocol": "https",
+          "host": [
+            "school-db-api-s",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "addSchool"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://school-db-api-s.onrender.com/listSchools?latitude={lat}&longitude={long}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://school-db-api-s.onrender.com/listSchools?latitude=28.6139&longitude=77.2090",
+          "protocol": "https",
+          "host": [
+            "school-db-api-s",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "listSchools"
+          ],
+          "query": [
+            {
+              "key": "latitude",
+              "value": "28.6139"
+            },
+            {
+              "key": "longitude",
+              "value": "77.2090"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
