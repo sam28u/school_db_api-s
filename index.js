@@ -50,6 +50,25 @@ app.post('/addSchool', async (req, res) => {
     }
 });
 
+// --- Temporary Setup API ---
+app.get('/init-db', async (req, res) => {
+    try {
+        await pool.query(`
+            CREATE TABLE IF NOT EXISTS schools (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                name VARCHAR(255) NOT NULL,
+                address VARCHAR(255) NOT NULL,
+                latitude FLOAT NOT NULL,
+                longitude FLOAT NOT NULL
+            )
+        `);
+        res.status(200).json({ message: "Table 'schools' created successfully in Aiven!" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Failed to create table", details: error.message });
+    }
+});
+
 app.get('/listSchools', async (req, res) => {
     try {
         const { latitude: userLat, longitude: userLon } = listSchoolsSchema.parse(req.query);
